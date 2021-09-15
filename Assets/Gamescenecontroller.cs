@@ -8,18 +8,9 @@ public class Gamescenecontroller : MonoBehaviour
 {
     int highscore = 0;
     public Text HighscoreText;
-    public void gotonextscene()
-    {
-        SceneManager.LoadScene(4);
-    }
-    public void back()
-    {
-        SceneManager.LoadScene(1);
-    }
-    public void help()
-    {
-        SceneManager.LoadScene(3);
-    }
+   
+    
+   
     public void Replay()
     {
         SceneManager.LoadScene(4);

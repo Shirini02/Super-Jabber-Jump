@@ -7,7 +7,8 @@ public class BulletPool : MonoBehaviour
 
     Rigidbody2D rbbullet;
     float bulletspeed = 20.0f;
-    //public ParticleSystem system;
+    //public GameObject enemyparticlesystem;
+    //public GameObject enemyeffects;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class BulletPool : MonoBehaviour
         rbbullet = GetComponent<Rigidbody2D>();
 
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -25,25 +26,37 @@ public class BulletPool : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        StartCoroutine("BulletAddToPool");
-        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2"||collision.gameObject.tag=="Bird" )
+    
+    
+       private void OnCollisionEnter2D(Collision2D collision)
         {
+            StartCoroutine("BulletAddToPool");
+            if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Bird" || collision.gameObject.tag == "Level2enemies")
+            {
 
-            Destroy(collision.gameObject);
-        }
+                Destroy(collision.gameObject);
 
+                //enemyparticlesystem.SetActive(true);
 
+                //Invoke("StopParticleSystem", 1f);
+            }
+
+        
+        
     }
-    IEnumerator BulletAddToPool()
+    public void StopParticleSystem()
+    {
+       // enemyparticlesystem.SetActive(false);
+    }
+   IEnumerator BulletAddToPool()
     {
         yield return new WaitForSeconds(1);
 
         if (rbbullet.gameObject.name == "Bullet")
         {
+         
             Objectpooling.Instance.AddBulletToPool(rbbullet.gameObject);
-            //Objectpooling.Instance.system.Play();
+            
 
         }
     }

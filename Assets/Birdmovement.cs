@@ -6,6 +6,7 @@ public class Birdmovement : MonoBehaviour
 {
     public float obstaclespeed;
     Rigidbody2D rb;
+    public GameObject enemyparticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,12 @@ public class Birdmovement : MonoBehaviour
     private void OnBecameInvisible()
     {
         this.gameObject.SetActive(false);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Instantiate(enemyparticle, transform.position, Quaternion.identity);
+        }
     }
 }

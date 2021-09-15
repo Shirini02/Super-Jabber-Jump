@@ -8,14 +8,16 @@ public class ObstacleMovement : MonoBehaviour
     SpriteRenderer playerSprite;
     public float x;
     public float y;
+    public GameObject enemyparticle;
     
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
-        
+
 
     }
-        void Update()
+   
+    void Update()
     {
 
         if (transform.position.x <= x)
@@ -28,6 +30,14 @@ public class ObstacleMovement : MonoBehaviour
             playerSprite.flipX = true;
             speedamount = -6;
         }
+
         transform.Translate(speedamount * Time.deltaTime, 0, 0);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag=="Bullet")
+        {
+            Instantiate(enemyparticle, transform.position, Quaternion.identity);
+        }
     }
 }

@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46226418, g: 0.041429326, b: 0.041429326, a: 1}
+  m_Color: {r: 0.3490566, g: 0.13007298, b: 0.13007298, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -335,7 +335,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9a9a7bdde5c74434393a5b2846497384, type: 3}
+    m_Font: {fileID: 12800000, guid: b6e9aedf6e42f25429dc7ea5bdd5de66, type: 3}
     m_FontSize: 52
     m_FontStyle: 3
     m_BestFit: 0
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5188679, g: 0.13950694, b: 0.13950694, a: 1}
+  m_Color: {r: 0.6415094, g: 0.021181926, b: 0.021181926, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1034,7 +1034,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9a9a7bdde5c74434393a5b2846497384, type: 3}
+    m_Font: {fileID: 12800000, guid: b498e8d2d2901e647a57c56a0615fa51, type: 3}
     m_FontSize: 52
     m_FontStyle: 3
     m_BestFit: 0
@@ -1149,7 +1149,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9a9a7bdde5c74434393a5b2846497384, type: 3}
+    m_Font: {fileID: 12800000, guid: b498e8d2d2901e647a57c56a0615fa51, type: 3}
     m_FontSize: 44
     m_FontStyle: 3
     m_BestFit: 0
@@ -1303,7 +1303,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9a9a7bdde5c74434393a5b2846497384, type: 3}
+    m_Font: {fileID: 12800000, guid: b498e8d2d2901e647a57c56a0615fa51, type: 3}
     m_FontSize: 50
     m_FontStyle: 3
     m_BestFit: 0
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9056604, g: 0.12388753, b: 0.12388753, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1608,7 +1608,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9a9a7bdde5c74434393a5b2846497384, type: 3}
+    m_Font: {fileID: 12800000, guid: b498e8d2d2901e647a57c56a0615fa51, type: 3}
     m_FontSize: 78
     m_FontStyle: 3
     m_BestFit: 0
@@ -1754,6 +1754,18 @@ PrefabInstance:
     - target: {fileID: 5943607897790034101, guid: d9971512c49ab6247b042161d5e16774, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943607897790034102, guid: d9971512c49ab6247b042161d5e16774, type: 3}
+      propertyPath: sounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943607897790034102, guid: d9971512c49ab6247b042161d5e16774, type: 3}
+      propertyPath: sounds.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b3348ce91b280ff4cafd4a758d5e7593, type: 3}
+    - target: {fileID: 5943607897790034102, guid: d9971512c49ab6247b042161d5e16774, type: 3}
+      propertyPath: sounds.Array.data[0].audioName
+      value: Background
       objectReference: {fileID: 0}
     - target: {fileID: 5943607897790034103, guid: d9971512c49ab6247b042161d5e16774, type: 3}
       propertyPath: m_Name

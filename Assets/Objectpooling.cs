@@ -10,11 +10,15 @@ public class Objectpooling : MonoBehaviour
     Animator animator;
     private static Objectpooling instance;
     AudioSource bulletaudio;
+    // take gameobject
+    public GameObject particlesystem;
     public AudioClip bulletsound;
-  //  public ParticleSystem system;
 
    
 
+   
+    // Update is called once per frame
+   
     public static Objectpooling Instance
     {
         get
@@ -32,16 +36,19 @@ public class Objectpooling : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         bulletaudio = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
       
-            if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space))
             {
                 print("Space pressed");
-
+            //enable gameobject
+            particlesystem.SetActive(true);
             //system.Play();
             animator.SetTrigger("Shoot");
             CreateBullet();
@@ -49,17 +56,18 @@ public class Objectpooling : MonoBehaviour
 
             bulletaudio.clip = bulletsound;
             bulletaudio.Play();
+            Invoke("StopParticleSystem", 1f);
         }
-       
-        
-
-
-
-
-
+    }
+   
+   
+    public void StopParticleSystem()
+    {
+        particlesystem.SetActive(false);
     }
     public void CreatePool()
     {
+       
         BulletPool.Push(Instantiate(bullet));
         BulletPool.Peek().SetActive(false);
         BulletPool.Peek().name = "Bullet";
@@ -77,11 +85,12 @@ public class Objectpooling : MonoBehaviour
     {
         if (BulletPool.Count == 0)
         {
+           
             CreatePool();
         }
         GameObject temp = BulletPool.Pop();
         temp.SetActive(true);
-        temp.transform.position = transform.position;
+        temp.transform.position =  transform.position;
         currentbullet = temp;
     }
 }
