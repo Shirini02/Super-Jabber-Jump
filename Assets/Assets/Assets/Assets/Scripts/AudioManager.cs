@@ -28,6 +28,10 @@ public class AudioManager : MonoBehaviour
             item.audioSource.loop = item.audioLoop;
         }
     }
+    private void Start()
+    {
+        PlayAudio("Background");
+    }
     public void PlayAudio(string name)
     {
        Sound s= Array.Find(sounds, Sound => Sound.audioName==name);

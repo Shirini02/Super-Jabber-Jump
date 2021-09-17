@@ -51,6 +51,7 @@ public class Objectpooling : MonoBehaviour
             particlesystem.SetActive(true);
             //system.Play();
             animator.SetTrigger("Shoot");
+           
             CreateBullet();
             
 

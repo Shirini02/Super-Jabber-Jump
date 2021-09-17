@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (playerMove == true)
         {
-            if (Input.GetKeyUp(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 
 
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
 
                 }
-                animator.SetTrigger("Idle");
+               // animator.SetTrigger("Idle");
                 // animator.SetTrigger("Run");
             }
            
@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.tag == "Obstacle")
         {
-            animator.SetTrigger("Idle");
+           // animator.SetTrigger("Idle");
         }
 
         if (collision.gameObject.tag == "Saw")
